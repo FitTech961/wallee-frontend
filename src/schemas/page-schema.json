@@ -1,0 +1,50 @@
+{
+  "title": "Wallee Test Page",
+  "components": [
+    {
+      "type": "page-title",
+      "label": "Payment Methods"
+    },
+    {
+      "type": "checkbox-list-panel",
+      "onSubmit": "logToConsole",
+      "options": [{
+        "value": "10001",
+        "title": "American Express",
+        "subtitle": "Worldline Acquiring",
+        "imageUrl": "https://app-wallee.com/resource/web/image/payment/card-brand/american-express.svg"
+      }, {
+        "value": "10002",
+        "title": "Visa",
+        "subtitle": "PostFinance Acquiring",
+        "imageUrl": "https://app-wallee.com/resource/web/image/payment/card-brand/visa.svg"
+      }, {
+        "value": "10003",
+        "title": "Maestro",
+        "subtitle": "Worldline Acquiring",
+        "imageUrl": "https://app-wallee.com/resource/web/image/payment/card-brand/maestro.svg"
+      }, {
+        "value": "10004",
+        "title": "Mastercard",
+        "subtitle": "Worldline Acquiring",
+        "imageUrl": "https://app-wallee.com/resource/web/image/payment/card-brand/mastercard.svg",
+        "checked": true
+      }, {
+        "value": "10005",
+        "title": "Direct Debit (SEPA)",
+        "subtitle": "Adyen",
+        "checked": true
+      }, {
+        "value": "10006",
+        "title": "Digital Payments powered by Mastercard",
+        "imageUrl": "https://app-wallee.com/resource/web/image/payment/card-brand/mastercard.svg"
+      }, {
+        "value": "10007",
+        "title": "QR-Invoice Payment Method with PostFinance (disabled)",
+        "subtitle": "QR-Invoice Processor with PostFinance (disabled)",
+        "imageUrl": "https://app-wallee.com/resource/web/image/payment/method/invoice.svg",
+        "disabled": true
+      }]
+    }
+  ]
+}
