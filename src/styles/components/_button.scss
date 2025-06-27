@@ -1,0 +1,28 @@
+@use '../common/typography';
+@use '../common/variables';
+
+.primary {
+  padding: variables.theme('spacing', 'sm') variables.theme('spacing', 'base');
+  background-color: variables.theme('colors', 'primary-main-150');
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+
+  @include typography.typo-button-primary;
+
+  &:hover {
+    background-color: variables.theme('colors', 'primary-main-200');
+  }
+}
+
+.secondary {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  @include typography.typo-button-secondary;
+
+  &:hover {
+    color: variables.theme('colors', 'primary-main-200');
+  }
+}

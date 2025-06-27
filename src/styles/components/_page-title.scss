@@ -1,0 +1,5 @@
+@use '../common/typography';
+
+.title {
+  @include typography.typo-title;
+}

@@ -1,0 +1,31 @@
+@use 'sass:map';
+
+$colors: (
+  'primary-main-150': #0da69c,
+  'primary-main-200': #0b8d85,
+  'primary-dark-300': #363636,
+  'shades-light-150': #d1d5db,
+  'shades-light-180': #8d8d8d,
+  'shades-light-200': #666,
+  'black-300': #333,
+  'black': #000,
+  'white': #fff,
+);
+$spacing: (
+  'xs': 4px,
+  'sm': 8px,
+  'md': 16px,
+  'base': 20px,
+  'lg': 24px,
+  'xl': 32px,
+);
+$theme: (
+  'colors': $colors,
+  'spacing': $spacing,
+);
+
+@function theme($category, $value) {
+  $category-map: map.get($theme, $category);
+
+  @return map.get($category-map, $value);
+}

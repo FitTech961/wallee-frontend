@@ -1,0 +1,49 @@
+@use 'variables';
+
+@mixin typo-h2 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: variables.theme('colors', 'primary-dark-300');
+  font-family: Inter, sans-serif;
+}
+
+@mixin typo-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.38;
+  color: variables.theme('colors', 'black-300');
+  font-family: Inter, sans-serif;
+}
+
+@mixin typo-helper {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.38;
+  color: variables.theme('colors', 'shades-light-200');
+  font-family: Inter, sans-serif;
+}
+
+@mixin typo-button-primary {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.38;
+  color: variables.theme('colors', 'white');
+  font-family: Inter, sans-serif;
+}
+
+@mixin typo-button-secondary {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.38;
+  color: variables.theme('colors', 'primary-main-150');
+  font-family: Inter, sans-serif;
+}
+
+@mixin typo-input {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.38;
+  color: variables.theme('colors', 'primary-dark-300');
+  font-family: Inter, sans-serif;
+}

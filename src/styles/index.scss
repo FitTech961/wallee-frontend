@@ -1,0 +1,20 @@
+@use 'components/page-title';
+@use 'components/button';
+@use 'components/checkbox-item';
+@use 'components/search-input';
+@use 'components/checkbox-list-panel';
+@use 'components/app';
+
+body {
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

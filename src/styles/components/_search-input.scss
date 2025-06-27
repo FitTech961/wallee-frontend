@@ -1,0 +1,27 @@
+@use '../common/typography';
+@use '../common/variables';
+
+.search-input {
+  position: relative;
+  display: flex;
+
+  &__field {
+    width: 100%;
+    padding: 10.5px 44px 10.5px 12px;
+    border: 1px solid variables.theme('colors', 'shades-light-150');
+    border-radius: 8px;
+
+    @include typography.typo-input;
+
+    &::placeholder {
+      color: variables.theme('colors', 'shades-light-180');
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    pointer-events: none;
+  }
+}

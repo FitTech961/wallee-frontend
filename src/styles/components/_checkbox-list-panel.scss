@@ -1,0 +1,33 @@
+@use '../common/typography';
+@use '../common/variables';
+
+.checkbox-list-panel {
+  display: flex;
+  flex-direction: column;
+  gap: variables.theme('spacing', 'base');
+  padding: variables.theme('spacing', 'lg') variables.theme('spacing', 'base');
+  background-color: variables.theme('colors', 'white');
+  width: 100%;
+  max-width: 412px;
+  border-radius: 8px;
+  box-shadow:
+    0 4px 6px -2px rgb(100, 116, 139, 5%),
+    0 10px 15px -3px rgb(100, 116, 139, 12%);
+  border: 1px solid variables.theme('colors', 'shades-light-150');
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 204px;
+    overflow-y: auto;
+    padding-right: 28px;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
