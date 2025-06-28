@@ -1,13 +1,16 @@
-.app {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 1280px;
-    width: 100%;
-    margin: 0 auto;
+@use '../common/variables';
 
-    .title {
-      margin-bottom: 110px;
-    }
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 variables.theme('spacing', 'md');
+
+  .title {
+    margin-bottom: 110px;
   }
+}
