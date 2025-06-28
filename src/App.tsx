@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SDUIRenderer, { SDUIComponent } from './components/SDUIRenderer';
 import PageTitle from './components/PageTitle';
 import CheckboxListPanel from './components/CheckboxListPanel';
 import type { CheckboxOption } from './components/CheckboxItem';
-import schemaData from './schemas/page-schema.json';
+import { useFetch } from './hooks/useFetch';
+import Loader from './components/Loader';
 
 /**
  * Full page schema, loaded from the static JSON.
@@ -43,18 +44,23 @@ const registry: Record<string, React.ComponentType<any>> = {
 };
 
 const App = () => {
-  const schema = schemaData as PageSchema;
+  const { data: schema, loading, error } = useFetch<PageSchema>('/api/schema');
 
-  React.useEffect(() => {
-    if (schema.title) {
+  useEffect(() => {
+    if (schema?.title) {
       document.title = schema.title;
     }
-  }, [schema.title]);
+  }, [schema?.title]);
+
+  if (loading) {
+    return <Loader />;
+  }
+  if (error) return <div>Error: {error.message}</div>;
 
   return (
     <div className="app">
       {/* Render all components in order from the schema */}
-      <SDUIRenderer components={schema.components} registry={registry} />
+      <SDUIRenderer components={schema!.components} registry={registry} />
     </div>
   );
 };

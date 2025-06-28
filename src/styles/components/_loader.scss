@@ -1,0 +1,44 @@
+@use '../common/variables';
+@use '../common/typography';
+
+.loader-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: variables.theme('spacing', 'xl');
+
+  &__loader {
+    margin-bottom: variables.theme('spacing', 'xl');
+  }
+
+  &__banner {
+    background-color: variables.theme('colors', 'primary-main-150');
+    border: none;
+    padding: variables.theme('spacing', 'md') variables.theme('spacing', 'lg');
+    border-radius: 8px;
+    text-align: center;
+    max-width: 320px;
+    box-shadow: 0 4px 6px rgb(variables.theme('colors', 'black-300'), 0.1);
+
+    /* start hidden above, then slide/fade in */
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slide-down 0.6s ease-out forwards;
+    animation-delay: 0.2s;
+
+    @include typography.typo-button-primary;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
