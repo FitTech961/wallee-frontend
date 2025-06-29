@@ -64,10 +64,11 @@ src/
    ```
 
 3. **Configure the backend URL**
-   Create a `.env.local` file at the project root with:
+   Create a `.env` file at the project root with:
 
    ```env
    REACT_APP_API_BASE_URL=https://wallee-backend.onrender.com
+   # REACT_APP_API_BASE_URL=http://localhost:4000
    ```
 
 4. **Run locally**
