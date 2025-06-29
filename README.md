@@ -14,6 +14,7 @@ A React & TypeScript application demonstrating a Server-Driven UI (SDUI) pattern
 * [Schema-Driven Rendering](#schema-driven-rendering)
 * [Updating the Schema](#updating-the-schema)
 * [Adding New Components](#adding-new-components)
+* [SVG Icons](#svg-icons)
 * [Styling Guidelines](#styling-guidelines)
 
 ---
@@ -144,12 +145,14 @@ All schema changes live in the **backend** repo. To update:
 ## Adding New Components
 
 1. **Create** a React component under `src/components/`.
+
 2. **Add** it to the `registry` in `App.tsx`:
 
    ```ts
    import MyComponent from './components/MyComponent';
    registry['my-component'] = MyComponent;
    ```
+
 3. **Update** your backend schema with:
 
    ```json
@@ -157,6 +160,26 @@ All schema changes live in the **backend** repo. To update:
    ```
 
 No changes needed in `SDUIRenderer` or other files.
+
+---
+
+## SVG Icons
+
+This project uses **SVGR** to import SVG files as React components:
+
+1. Place your SVGs under `src/assets/icons/` (e.g. `search.svg`).
+2. Import them with the `ReactComponent` syntax:
+
+   ```ts
+   import { ReactComponent as SearchIcon } from '../assets/icons/search.svg';
+   ```
+3. Use them in TSX just like any other component:
+
+   ```tsx
+   <SearchIcon className="search-input__icon" aria-hidden="true" />
+   ```
+
+This allows CSS styling, props, and tree-shaking of unused icons.
 
 ---
 
